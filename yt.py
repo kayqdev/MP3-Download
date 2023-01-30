@@ -1,6 +1,5 @@
 from pytube import YouTube
 import os
-import shutil
 
 link = input('URL: ')
 

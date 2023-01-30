@@ -2,20 +2,22 @@ from pytube import YouTube
 import os
 import shutil
 
-link = input('link: ')
+link = input('URL: ')
 
-name = input('nome da musica: ')
+name = input('Music name: ')
 
 yt = YouTube(link)
 
-# Escolha a qualidade do áudio
+# Escolher a qualidade do audio
 audio = yt.streams.filter(only_audio=True).first()
 
-# Inicie o download
+# Iniciar o download
 out_file = audio.download()
 
+
+# renomear para mp3
 base, ext = os.path.splitext(out_file)
 new_file = base + '.mp3'
 os.rename(out_file, new_file)
 
-shutil.move(f'/storage/emulated/0/{yt.title}.mp3', f'/storage/emulated/0/musicas/{yt.title}.mp3')
+print("MP3 baixado!")

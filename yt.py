@@ -4,8 +4,6 @@ import shutil
 
 link = input('URL: ')
 
-name = input('Music name: ')
-
 yt = YouTube(link)
 
 # Escolher a qualidade do audio
